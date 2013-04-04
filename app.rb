@@ -9,4 +9,5 @@ class App < Sinatra::Base
   end
 end
 
+require './models/message'
 require './controllers/index'
