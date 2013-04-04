@@ -1,0 +1,86 @@
+body {
+    font-family: "pt sans", sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    width: 960px;
+    margin: 0px auto;
+}
+
+.header {
+    height: 40px;
+    background: #eaebdd;
+    margin-bottom: 20px;
+}
+
+.header-item {
+    line-height: 40px;
+    list-style-type: none;
+}
+
+.header-item-left {
+    float: left;
+    padding-left: 10px;
+}
+
+.header-item-right {
+    float: right;
+    padding-right: 10px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.nav {
+    height: 40px;
+    background: #eaebdd;
+    margin-bottom: 20px;
+}
+
+.nav-item {
+    line-height: 40px;
+    padding-left: 10px;
+    display: inline-block;
+    list-style-type: none;
+}
+
+.nav-item:after {
+    content: "/";
+    padding-left: 10px;
+}
+
+.nav-item:last-child:after {
+    content: "";
+}
+
+.messages {
+    width: 100%;
+    line-height: 1.2;
+}
+
+.messages td {
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.message td:first-child {
+    background: #c6deeb;
+}
+
+.message td:last-child {
+    width: 100%;
+    background: #eaebdd;
+}
+
+.message-from {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+}  
+
+.message-timestamp {
+    text-align: right;
+    display: block;
+}
