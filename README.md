@@ -1,0 +1,1 @@
+Run application using `thin -R config.ru start`
