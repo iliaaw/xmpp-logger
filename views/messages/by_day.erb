@@ -1,21 +1,21 @@
 <table class="messages">
-  <% @messages.each do |s| %>
-    <tr class="message">
-      <!-- <%= s.message_type %> -->
-      <% if s.message_type == 'status' %>
+  <% @messages.each do |m| %>
+    <tr class="message <%= 'message-status' if m.message_type == 'status'%>">
+      <!-- <%= m.message_type %> -->
+      <% if m.message_type == 'status' %>
         <td>
-          <span class="message-timestamp"><%= s.created_at.strftime('%H:%M:%S') %></span>
+          <span class="message-timestamp"><%= m.created_at.strftime('%H:%M:%S') %></span>
         </td>
         <td>
-          <div class="message-body"><%= s.from %> is now <%= s.body %></div>
+          <div class="message-body"><%= m.from %> is now <%= m.body %></div>
         </td>
-      <% else s.message_type %>
+      <% else m.message_type %>
         <td>
-          <span class="message-from"><%= s.from %></span>
-          <span class="message-timestamp"><%= s.created_at.strftime('%H:%M:%S') %></span>
+          <span class="message-from"><%= m.from %></span>
+          <span class="message-timestamp"><%= m.created_at.strftime('%H:%M:%S') %></span>
         </td>
         <td>
-          <div class="message-body"><%= s.message_type == 'text' ? escape_html(s.body) : s.body %></div>
+          <div class="message-body"><%= m.message_type == 'text' ? escape_text_message(m.body) : m.body %></div>
         </td>
       <% end %>
     </tr>

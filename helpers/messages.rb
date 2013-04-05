@@ -1,7 +1,11 @@
 class App < Sinatra::Base
   helpers do
-    def html_escape(text)
-      Rack::Utils.escape_html(text)
+    def escape_text_message(message)
+      link_regex = /(http|https|ftp|ftps)\:&#x2F;&#x2F;[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(&#x2F;\S*)?/
+      message = Rack::Utils.escape_html(message)
+      message.gsub!(/(http:&#x2F;&#x2F;\S+)/, '<a href="\1">\1</a>')
+      message.gsub!(/\n/, '<br />')
+      message
     end
 
     def last_day_path

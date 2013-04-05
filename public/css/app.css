@@ -71,7 +71,7 @@ table.messages {
 
 table.messages td {
     padding: 5px;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 ul.messages li {
@@ -86,7 +86,15 @@ ul.messages li a {
 }
 
 ul.messages li a:hover {
-    color: red;
+    background: #dddec8;
+}
+
+ul.messages li {
+    border-bottom: 1px solid #aaa;
+}
+
+ul.messages li:last-child {
+    border-bottom: none;
 }
 
 .message td:first-child {
@@ -96,6 +104,10 @@ ul.messages li a:hover {
 .message td:last-child {
     width: 100%;
     background: #eaebdd;
+}
+
+.message-status {
+    color: #888;
 }
 
 .message-from {
