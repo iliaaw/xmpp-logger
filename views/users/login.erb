@@ -1,7 +1,17 @@
-<%= @flash %>
+<div class="flash">
+  <%= @flash %>
+</div>
 
-<form action="/login" method="POST">
-  <input type="text" name="login" placeholder="Login" />
-  <input type="password" name="password" placeholder="Password" />
-  <input type="submit" value="Log in" />
+<form action="/login" method="POST" class="login-form">
+  <div class="field field-login">
+    <input type="text" name="login" placeholder="Login" autocomplete="off" />
+  </div>
+
+  <div class="field field-password">
+    <input type="password" name="password" placeholder="Password" />
+  </div>
+
+  <div class="field">
+    <input type="submit" value="Log in" />
+  </div>
 </form>

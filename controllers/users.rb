@@ -16,7 +16,7 @@ class App < Sinatra::Base
   end
 
   get '/login' do
-    erb :'users/login', :layout => false
+    erb :'users/login', :layout => :users
   end
 
   post '/login' do
@@ -27,7 +27,7 @@ class App < Sinatra::Base
       redirect to '/'
     else
       @flash = 'Invalid credentials'
-      erb :'users/login', :layout => false
+      erb :'users/login', :layout => :users
     end
   end
 
