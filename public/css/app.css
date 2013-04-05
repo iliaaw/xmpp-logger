@@ -1,6 +1,15 @@
 body {
     font-family: "pt sans", sans-serif;
     font-size: 16px;
+    color: #080808;
+}
+
+a {
+    color: #0261f7
+}
+
+a:hover {
+    color: #ff035b
 }
 
 .container {
@@ -55,14 +64,29 @@ body {
     content: "";
 }
 
-.messages {
+table.messages {
     width: 100%;
     line-height: 1.2;
 }
 
-.messages td {
+table.messages td {
     padding: 5px;
     white-space: nowrap;
+}
+
+ul.messages li {
+    list-style-type: none; 
+}
+
+ul.messages li a {
+    background: #eaebdd;
+    line-height: 40px;
+    display: block; 
+    padding-left: 10px;
+}
+
+ul.messages li a:hover {
+    color: red;
 }
 
 .message td:first-child {

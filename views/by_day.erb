@@ -1,0 +1,25 @@
+<table class="messages">
+  <% unless @messages.nil? %>
+  <% @messages.each do |s| %>
+    <tr class="message">
+      <!-- <%= s.message_type %> -->
+      <% if s.message_type == "status" %>
+        <td>
+          <span class="message-timestamp"><%= s.created_at.strftime('%H:%M:%S') %></span>
+        </td>
+        <td>
+          <div class="message-body"><%= s.from %> is now <%= s.body %></div>
+        </td>
+      <% else %>
+        <td>
+          <span class="message-from"><%= s.from %></span>
+          <span class="message-timestamp"><%= s.created_at.strftime('%H:%M:%S') %></span>
+        </td>
+        <td>
+          <div class="message-body"><%= s.body %></div>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+  <% end %>
+</table>

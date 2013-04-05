@@ -1,3 +1,12 @@
 <div class="nav">
-  <li class="nav-item"><a href="#">test</a></li><li class="nav-item"><a href="#">test</a></li><li class="nav-item"><a href="#">test</a></li>
+  <li class="nav-item"><a href="/">272pi</a></li>
+  <% unless @year.nil? %>
+    <li class="nav-item"><a href="<%= "/#{@year}" %>"><%= @year %></a></li>
+    <% unless @month.nil? %>
+      <li class="nav-item"><a href="<%= "/#{@year}/#{@month}" %>"><%= @month %></a></li>
+      <% unless @day.nil? %>
+        <li class="nav-item"><a href="<%= "/#{@year}/#{@month}/#{@day}" %>"><%= @day %></a></li>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

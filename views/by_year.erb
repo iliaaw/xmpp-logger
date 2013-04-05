@@ -1,0 +1,5 @@
+<ul class="messages">
+  <% @messages.each do |message| %>
+    <li><a href="/<%= @year %>/<%= message.month %>"><%= message.month %></a></li>
+  <% end %>
+</ul>
