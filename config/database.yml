@@ -1,5 +1,9 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite
+  adapter: postgresql
+  database: j_dev
+  username: sinatra
+  password: sinatra
+  host: localhost
+  encoding: utf8
   pool: 5
   timeout: 5000
