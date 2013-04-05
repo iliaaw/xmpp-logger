@@ -2,6 +2,7 @@
   <% @messages.each do |m| %>
     <tr class="message <%= 'message-status' if m.message_type == 'status'%>">
       <!-- <%= m.id %> -->
+      <!-- <%= m.created_at %> -->
       <% if m.message_type == 'status' %>
         <td>
           <span class="message-timestamp"><%= m.created_at.strftime('%H:%M:%S') %></span>
