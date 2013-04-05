@@ -66,16 +66,6 @@ a:hover {
     content: "";
 }
 
-table.messages {
-    width: 100%;
-    line-height: 1.2;
-}
-
-table.messages td {
-    padding: 5px;
-    /*white-space: nowrap;*/
-}
-
 ul.messages li {
     list-style-type: none; 
 }
@@ -99,6 +89,15 @@ ul.messages li:last-child {
     border-bottom: none;
 }
 
+table.messages {
+    width: 100%;
+    line-height: 1.2;
+}
+
+.message td {
+    padding: 5px;
+}
+
 .message td:first-child {
     background: #c6deeb;
 }
@@ -106,6 +105,16 @@ ul.messages li:last-child {
 .message td:last-child {
     width: 100%;
     background: #eaebdd;
+}
+
+.collapsed .message td:first-child {
+    background: #adcfe2;
+    text-align: right;
+}
+
+.collapsed .message td:last-child {
+    width: 100%;
+    background: #dddec8;
 }
 
 .message-status {
