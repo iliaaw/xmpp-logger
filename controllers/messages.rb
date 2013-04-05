@@ -7,7 +7,7 @@ class App < Sinatra::Base
     "distinct extract(#{field} from created_at at time zone \'UTC +4\') as #{field}"
   end
 
-  get '/' do
+  get '/', :auth => :user do
     sql_select = sql_extract('year')
     sql_order = 'year desc'
 
@@ -19,7 +19,7 @@ class App < Sinatra::Base
     erb :'messages/index'
   end
 
-  get %r{^/([\d]+)/?$} do |year|
+  get %r{^/([\d]+)/?$}, :auth => :user do |year|
     sql_where = @@sql_where_years
     sql_select = sql_extract('month')
     sql_order = 'month desc'
@@ -33,7 +33,7 @@ class App < Sinatra::Base
     erb :'messages/by_year'
   end
 
-  get %r{^/([\d]+)/([\d]+)/?$} do |year, month|
+  get %r{^/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month|
     sql_where = @@sql_where_years + @@sql_where_months
     sql_select = sql_extract('day')
     sql_order = 'day desc'
@@ -48,7 +48,7 @@ class App < Sinatra::Base
     erb :'messages/by_month'
   end
 
-  get %r{^/([\d]+)/([\d]+)/([\d]+)/?$} do |year, month, day| 
+  get %r{^/([\d]+)/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month, day| 
     sql_where = @@sql_where_years + @@sql_where_months + @@sql_where_days
     sql_order = 'created_at asc'
 

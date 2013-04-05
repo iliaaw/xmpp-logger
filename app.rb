@@ -47,6 +47,9 @@ class App < Sinatra::Base
   end
 end
 
+require './models/user'
 require './models/message'
+require './controllers/users'
 require './controllers/messages'
-require './helpers/html'
+require './helpers/users'
+require './helpers/messages'

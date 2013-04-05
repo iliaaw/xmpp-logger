@@ -4,7 +4,7 @@ class App < Sinatra::Base
       Rack::Utils.escape_html(text)
     end
 
-    def last_day_href
+    def last_day_path
       Message.last.created_at.strftime("/%Y/%m/%d")
     end
 
