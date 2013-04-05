@@ -1,5 +1,5 @@
 <ul class="messages">
   <% @messages.each do |message| %>
-    <li><a href="/<%= @year %>/<%= @month %>/<%= message.day %>"><%= message.day %></a></li>
+    <li><a href="/<%= @year %>/<%= lz @month %>/<%= lz message.day %>"><%= lz message.day %></a></li>
   <% end %>
 </ul>
