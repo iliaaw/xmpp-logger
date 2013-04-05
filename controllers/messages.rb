@@ -16,7 +16,7 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :index
+    erb :'messages/index'
   end
 
   get %r{^/([\d]+)/?$} do |year|
@@ -30,7 +30,7 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :by_year
+    erb :'messages/by_year'
   end
 
   get %r{^/([\d]+)/([\d]+)/?$} do |year, month|
@@ -45,7 +45,7 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :by_month
+    erb :'messages/by_month'
   end
 
   get %r{^/([\d]+)/([\d]+)/([\d]+)/?$} do |year, month, day| 
@@ -60,6 +60,6 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
     
-    erb :by_day
+    erb :'messages/by_day'
   end
 end
