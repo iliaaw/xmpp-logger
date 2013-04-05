@@ -49,3 +49,4 @@ end
 
 require './models/message'
 require './controllers/messages'
+require './helpers/html'
