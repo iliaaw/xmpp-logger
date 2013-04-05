@@ -48,4 +48,4 @@ class App < Sinatra::Base
 end
 
 require './models/message'
-require './controllers/index'
+require './controllers/messages'
