@@ -14,6 +14,7 @@ $(document).ready(function() {
                         $(this).show();
                     }
                 });
+                $(this).closest('tbody').removeClass('collapsed');
                 $(this).closest('tr').remove();
             });
 
