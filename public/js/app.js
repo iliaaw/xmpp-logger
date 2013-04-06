@@ -6,7 +6,7 @@ $(document).ready(function() {
 
         if (count > 1) {
             var tr = $('<tr></tr>');
-            var a = $('<a></a>').attr('href', '#').text('statuses collapsed, click to unfold').click(function(event) {
+            var a = $('<a></a>').attr('href', '#').text(count + ' statuses collapsed').click(function(event) {
                 event.preventDefault();
 
                 $(that).children('tr').each(function(index) {
@@ -19,7 +19,7 @@ $(document).ready(function() {
             });
 
             tr.addClass('message');
-            tr.append($('<td></td>').text(count));
+            tr.append($('<td></td>'));
             tr.append($('<td></td>').append(a));
 
             $(this).prepend(tr);

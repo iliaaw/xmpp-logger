@@ -7,16 +7,16 @@ input[type=password] {
 }
 
 a {
-    color: #0261f7
+    color: #0261f7;
 }
 
 a:hover {
-    color: #ff035b
+    color: #ff035b;
 }
 
 .container {
     width: 960px;
-    margin: 0px auto;
+    margin: 0px auto 40px;
 }
 
 .header {
@@ -100,6 +100,7 @@ table.messages {
 
 .message td:first-child {
     background: #c6deeb;
+    white-space: nowrap;
 }
 
 .message td:last-child {
@@ -108,7 +109,7 @@ table.messages {
 }
 
 .collapsed .message td:first-child {
-    background: #adcfe2;
+    background: #c6deeb;
     text-align: right;
 }
 
