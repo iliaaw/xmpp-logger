@@ -94,28 +94,26 @@ table.messages {
     line-height: 1.2;
 }
 
+.messages-even .message {
+    background: #eaebdd;
+}
+
+.messages-odd .message {
+    background: #d6d8bd;
+}
+
 .message td {
     padding: 5px;
 }
 
 .message td:first-child {
-    background: #c6deeb;
     white-space: nowrap;
+    padding-left: 10px;
 }
 
 .message td:last-child {
     width: 100%;
-    background: #eaebdd;
-}
-
-.collapsed .message td:first-child {
-    background: #c6deeb;
-    text-align: right;
-}
-
-.collapsed .message td:last-child {
-    width: 100%;
-    background: #dddec8;
+    padding-right: 10px;
 }
 
 .message-status {
