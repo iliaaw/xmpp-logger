@@ -1,6 +1,6 @@
 <table class="messages">
   <% @counter = 0 %>
-  <% @messages.each do |m| %>
+  <% @messages.each_with_index do |m, i| %>
     <% if m.message_type == 'status' %>
       <% if @counter == 0 %>
         <tbody class="collapsed" data-count="">
@@ -28,8 +28,8 @@
         </td>
       <% else %>
         <td>
-          <span class="message-from"><%= m.from %></span>
-          <span class="message-timestamp"><%= m.created_at.strftime('%H:%M:%S') %></span>
+          <span class="message-from"><a name="<%= i %>"></a><%= m.from %></span>
+          <span class="message-timestamp"><a href="#<%= i %>"><%= m.created_at.strftime('%H:%M:%S') %></a></span>
         </td>
         <td>
           <div class="message-body"><%= m.message_type == 'text' ? escape_text_message(m.body) : m.body %></div>
