@@ -11,7 +11,7 @@ a {
 }
 
 a:hover {
-    color: #ff035b;
+    color: #ff035b !important;
 }
 
 .container {
@@ -21,7 +21,7 @@ a:hover {
 
 .header {
     height: 40px;
-    background: #eaebdd;
+    background: #f7f7f3;
     margin-bottom: 20px;
 }
 
@@ -46,7 +46,7 @@ a:hover {
 
 .nav {
     height: 40px;
-    background: #eaebdd;
+    background: #f7f7f3;
     margin-bottom: 20px;
     color: #686868;
 }
@@ -72,7 +72,7 @@ ul.messages li {
 }
 
 ul.messages li a {
-    background: #eaebdd;
+    background: #f7f7f3;
     line-height: 40px;
     display: block; 
     padding-left: 10px;
@@ -96,15 +96,15 @@ table.messages {
 }
 
 .messages-even .message {
-    background: #eaebdd;
+    background: #f9f9f5;
 }
 
 .messages-odd .message {
-    background: #d6d8bd;
+    background: #e8e8ef;
 }
 
 .messages-collapsed .message {
-    background: #bbd7e5;
+    background: #ecf4f8;
 }
 
 .messages-collapsed .message {
@@ -116,6 +116,10 @@ table.messages {
     vertical-align: top;
     width: 1px;
     height: 1px;
+}
+
+.spoiler {
+    color: #5093fe;
 }
 
 .message td {
@@ -133,8 +137,8 @@ table.messages {
 }
 
 .message-status {
-    color: #888;
-    background: #c7deea;    
+    color: #8f8f8f;
+    background: #ecf4f8;    
 }
 
 .message-from {
@@ -146,6 +150,10 @@ table.messages {
 .message-timestamp {
     text-align: right;
     display: block;
+}
+
+.message-timestamp a {
+    color: #5093fe;
 }
 
 .flash {
