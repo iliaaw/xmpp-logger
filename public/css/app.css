@@ -19,6 +19,8 @@ a:hover {
     margin: 0px auto 40px;
 }
 
+/* ======================================== */
+
 .header {
     height: 40px;
     background: #f7f7f3;
@@ -44,6 +46,8 @@ a:hover {
     clear: both;
 }
 
+/* ======================================== */
+
 .nav {
     height: 40px;
     background: #f7f7f3;
@@ -67,30 +71,31 @@ a:hover {
     content: "";
 }
 
-ul.messages li {
+/* ======================================== */
+
+.date {
     list-style-type: none; 
 }
 
-ul.messages li a {
+.date-link {
     background: #f7f7f3;
     line-height: 40px;
     display: block; 
     padding-left: 10px;
+    border-top: 1px solid #ccc;
 }
 
-ul.messages li a:hover {
+.date:first-child .date-link {
+    border-top: none;
+}
+
+.date-link:hover {
     background: #e8e8ef;
 }
 
-ul.messages li {
-    border-bottom: 1px solid #ccc;
-}
+/* ======================================== */
 
-ul.messages li:last-child {
-    border-bottom: none;
-}
-
-table.messages {
+.messages {
     width: 100%;
     line-height: 1.2;
 }
@@ -164,12 +169,7 @@ table.messages {
     color: #5093fe;
 }
 
-.flash {
-    background: #fbcfe4;
-    line-height: 40px;
-    padding: 0px 10px;
-    margin-bottom: 20px;
-}
+/* ======================================== */
 
 input[type=text],
 input[type=password] {
@@ -178,6 +178,13 @@ input[type=password] {
     height: 20px;
     margin: 0px;
     padding: 5px 10px;
+}
+
+.flash {
+    background: #fbcfe4;
+    line-height: 40px;
+    padding: 0px 10px;
+    margin-bottom: 20px;
 }
 
 .field-login,
