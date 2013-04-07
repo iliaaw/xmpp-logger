@@ -5,9 +5,7 @@ $(document).ready(function() {
         var count = next.data('count')
 
         if (count > 1) {
-            var tr = $('<tr></tr>');
-            var div = $('<div></div>')
-            var a = $('<a></a>').attr('href', '#').text(count + ' statuses collapsed').click(function(event) {
+            var spoiler = $('<a></a>').addClass('spoiler').attr('href', '#').text(count + ' statuses collapsed').click(function(event) {
                 event.preventDefault();
 
                 $(that).children('tr').each(function(index) {
@@ -18,9 +16,11 @@ $(document).ready(function() {
                 $(this).closest('tbody').removeClass('messages-collapsed');
                 $(this).closest('tr').remove();
             });
+            var wrapper = $('<div></div>').addClass('spoiler-wrapper').append(spoiler);
+            var tr = $('<tr></tr>');
 
             tr.addClass('message');
-            tr.append($('<td></td>').append(div.append(a)));
+            tr.append($('<td></td>').append(wrapper));
             tr.append($('<td></td>').text('|'));
 
             $(this).prepend(tr);

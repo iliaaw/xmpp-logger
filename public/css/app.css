@@ -107,14 +107,15 @@ table.messages {
     background: #bbd7e5;
 }
 
-.messages-collapsed .message td {
-    position: relative;
+.messages-collapsed .message {
     color: transparent;
 }
 
-.messages-collapsed .message div {
-    position: absolute;
-    z-index: 1;
+.spoiler-wrapper {
+    position: relative;
+    vertical-align: top;
+    width: 1px;
+    height: 1px;
 }
 
 .message td {
