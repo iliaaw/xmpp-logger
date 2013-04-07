@@ -1,25 +1,62 @@
 <table class="messages">
   <% @even = true %>
   <% @from = nil %>
-  <tbody class="messages-even">
-    <% @messages.each_with_index do |m, i| %>
-      <% unless m.message_type == 'status' %>
-        <% if !@from.nil? && m.from != @from %>
-          </tbody>
-          <tbody class="<%= @even ? 'messages-even' : 'messages-odd' %>">
-          <% @even = !@even %>
+  <% @counter = 0 %>
+  <% @messages.each_with_index do |m, i| %>
+    <% if m.from %>
+      <% if m.is_status? %>
+        <%# if previous message is not a status %>
+        <% if @counter == 0 %>
+          <% if !@from.nil? %>
+            </tbody>
+          <% end %>
+          <tbody class="messages-collapsed">
         <% end %>
-        <% @from = m.from %>
-        <tr class="message <%= 'message-status' if m.message_type == 'status'%>">
+
+        <% @counter += 1 %>
+
+        <tr class="message message-status">
+          <td class="message-timestamp"><a href="#<%= i %>"><%= m.created_at.strftime('%H:%M:%S') %></a></td>
+          <td><%= m.from %> is now <%= m.body %></td>
+        </tr>
+      <% else %>
+        <%# if previous message is a status %>
+        <% if @counter != 0 %>
+          <% @even = !@even if !@from.nil? && m.from != @from %>
+          </tbody>
+          <tbody data-count="<%= @counter %>"></tbody>
+          <% @counter = 0 %>
+          <tbody class="messages-<%= @even ? 'even' : 'odd' %>">
+        <% else %>
+        <%# previous message is NOT a status %>
+
+          <%# if current message is the first one %>
+          <% if @from.nil? %>
+            <tbody class="messages-<%= @even ? 'even' : 'odd' %>">
+          <%# if previous message does not belong to the same user as current does %>
+          <% elsif m.from != @from %>
+            <% @even = !@even %>
+            </tbody>
+            <tbody class="messages-<%= @even ? 'even' : 'odd' %>">
+          <% end %>
+        <% end %>
+
+        <tr class="message">
           <td>
             <span class="message-from"><a name="<%= i %>"></a><%= m.from %></span>
             <span class="message-timestamp"><a href="#<%= i %>"><%= m.created_at.strftime('%H:%M:%S') %></a></span>
-            </td>
-            <td>
+          </td>
+          <td>
             <div class="message-body"><%= m.message_type == 'text' ? escape_text_message(m.body) : m.body %></div>
           </td>
         </tr>
+
+        <% @from = m.from %>
       <% end %>
     <% end %>
+  <% end %>
   </tbody>
+  <% if @counter != 0 %>
+    <tbody data-count="<%= @counter %>"></tbody>
+  <% end %>
 </table>

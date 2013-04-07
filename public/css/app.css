@@ -7,7 +7,7 @@ input[type=password] {
 }
 
 a {
-    color: #0261f7;
+    color: #1e74fd;
 }
 
 a:hover {
@@ -48,6 +48,7 @@ a:hover {
     height: 40px;
     background: #eaebdd;
     margin-bottom: 20px;
+    color: #686868;
 }
 
 .nav-item {
@@ -82,7 +83,7 @@ ul.messages li a:hover {
 }
 
 ul.messages li {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #ccc;
 }
 
 ul.messages li:last-child {
@@ -102,6 +103,20 @@ table.messages {
     background: #d6d8bd;
 }
 
+.messages-collapsed .message {
+    background: #bbd7e5;
+}
+
+.messages-collapsed .message td {
+    position: relative;
+    color: transparent;
+}
+
+.messages-collapsed .message div {
+    position: absolute;
+    z-index: 1;
+}
+
 .message td {
     padding: 5px;
 }
@@ -118,6 +133,7 @@ table.messages {
 
 .message-status {
     color: #888;
+    background: #c7deea;    
 }
 
 .message-from {
