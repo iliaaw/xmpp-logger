@@ -100,11 +100,11 @@ a:hover {
     line-height: 1.2;
 }
 
-.messages tbody {
+.messages-group {
     border-top: 1px solid #ccc;
 }
 
-.messages tbody:first-child {
+.messages-group:first-child {
     border-top: none;
 }
 
@@ -118,9 +118,6 @@ a:hover {
 
 .messages-collapsed .message {
     background: #ecf4f8;
-}
-
-.messages-collapsed .message {
     color: transparent;
 }
 
@@ -135,18 +132,14 @@ a:hover {
     color: #5093fe;
 }
 
-.message td {
-    padding: 5px;
-}
-
-.message td:first-child {
+.message-meta {
     white-space: nowrap;
-    padding-left: 10px;
+    padding: 5px 5px 5px 10px;
 }
 
-.message td:last-child {
+.message-body {
     width: 100%;
-    padding-right: 10px;
+    padding: 5px 10px 5px 5px;
 }
 
 .message-status {
@@ -160,12 +153,12 @@ a:hover {
     font-weight: bold;
 }  
 
-.message-timestamp {
+.message-time {
     text-align: right;
     display: block;
 }
 
-.message-timestamp a {
+.message-time-link {
     color: #5093fe;
 }
 

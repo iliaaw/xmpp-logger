@@ -20,8 +20,8 @@ $(document).ready(function() {
             var tr = $('<tr></tr>');
 
             tr.addClass('message');
-            tr.append($('<td></td>').append(wrapper));
-            tr.append($('<td></td>').text('|'));
+            tr.append($('<td></td>').addClass('message-meta').append(wrapper));
+            tr.append($('<td></td>').addClass('message-body').text('|'));
 
             $(this).prepend(tr);
 
