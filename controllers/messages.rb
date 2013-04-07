@@ -16,7 +16,7 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :'messages/index', :layout => :messages
+    erb :'messages/years', :layout => :messages
   end
 
   get %r{^/([\d]+)/?$}, :auth => :user do |year|
@@ -30,7 +30,7 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :'messages/by_year', :layout => :messages
+    erb :'messages/months', :layout => :messages
   end
 
   get %r{^/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month|
@@ -45,7 +45,7 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :'messages/by_month', :layout => :messages
+    erb :'messages/days', :layout => :messages
   end
 
   get %r{^/([\d]+)/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month, day| 
@@ -60,6 +60,6 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
     
-    erb :'messages/by_day', :layout => :messages
+    erb :'messages/messages', :layout => :messages
   end
 end
