@@ -16,7 +16,7 @@ class App < Sinatra::Base
   end
 
   get '/login' do
-    erb :'users/login'
+    erb :'users/login', :locals => { :no_header => true }
   end
 
   post '/login' do
@@ -27,7 +27,7 @@ class App < Sinatra::Base
       redirect to '/'
     else
       @flash = 'Invalid credentials'
-      erb :'users/login'
+      erb :'users/login', :locals => { :no_header => true }
     end
   end
 

@@ -4,6 +4,9 @@ require 'sinatra/activerecord'
 require 'sinatra/base'
 
 class App < Sinatra::Base
+  set :raise_errors, false
+  set :show_exceptions, false
+
   register Sinatra::ActiveRecordExtension
 
   configure do
@@ -40,5 +43,6 @@ require './models/user'
 require './models/message'
 require './controllers/users'
 require './controllers/messages'
+require './controllers/errors'
 require './helpers/users'
 require './helpers/messages'

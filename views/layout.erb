@@ -10,13 +10,17 @@
   </head>
 
   <body>
-    <div class="container">
-      <% if @render_partials %>
-        <%= erb :'partials/header' %>
-        <%= erb :'partials/nav' %>
-      <% end %>
+    <% unless (no_container ||= false) %>  
+      <div class="container">
+        <% unless (no_header ||= false) %>
+          <%= erb :'partials/header' %>
+          <%= erb :'partials/nav' %>
+        <% end %>
 
+        <%= yield %>
+      </div>
+    <% else %>
       <%= yield %>
-    </div>
+    <% end %>
   </body>
 </html>

@@ -12,11 +12,7 @@ class App < Sinatra::Base
     sql_order = 'year desc'
 
     @messages = Message.all(:select => sql_select, :order => sql_order)
-    if @messages.blank?
-      raise ActiveRecord::RecordNotFound
-    end
 
-    @render_partials = true
     erb :'messages/years'
   end
 
@@ -28,10 +24,9 @@ class App < Sinatra::Base
     @year = year
     @messages = Message.where(sql_where, year).all(:select => sql_select, :order => sql_order)
     if @messages.blank?
-      raise ActiveRecord::RecordNotFound
+      error 404
     end
 
-    @render_partials = true
     erb :'messages/months'
   end
 
@@ -44,10 +39,9 @@ class App < Sinatra::Base
     @month = month
     @messages = Message.where(sql_where, year, month).all(:select => sql_select, :order => sql_order)
     if @messages.blank?
-      raise ActiveRecord::RecordNotFound
+      error 404
     end
 
-    @render_partials = true
     erb :'messages/days'
   end
 
@@ -60,10 +54,9 @@ class App < Sinatra::Base
     @day = day
     @messages = Message.where(sql_where, year, month, day).all(:order => sql_order)
     if @messages.blank?
-      raise ActiveRecord::RecordNotFound
+      error 404
     end
     
-    @render_partials = true
     erb :'messages/messages'
   end
 end

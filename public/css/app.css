@@ -163,3 +163,25 @@ input[type=password] {
 .field-password {
     margin-bottom: 10px;
 }
+
+/* ======================================== */
+
+.error-wrapper {
+    width: 960px;
+    margin: 50px auto 0px;
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 24px;
+    background: #f3f3ea;
+}
+
+.error {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 960px) {
+    .error-wrapper {
+        width: 100%;
+    }
+}
