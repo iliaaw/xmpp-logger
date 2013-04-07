@@ -32,17 +32,6 @@ class App < Sinatra::Base
           message.save
         end
       end
-
-      @@xmpp_client.register_handler :status do |s|
-        if "#{s.from.node}@#{s.from.domain}" == @@xmpp_room
-          message = Message.new(
-            :from => s.from.resource,
-            :body => s.state,
-            :message_type => 'status'
-          )
-          message.save
-        end
-      end
     end
   end
 end

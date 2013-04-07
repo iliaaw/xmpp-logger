@@ -23,7 +23,7 @@ a:hover {
 
 .header {
     height: 40px;
-    background: #f7f7f3;
+    background: #f3f3ea;
     margin-bottom: 20px;
 }
 
@@ -50,7 +50,7 @@ a:hover {
 
 .nav {
     height: 40px;
-    background: #f7f7f3;
+    background: #f3f3ea;
     margin-bottom: 20px;
     color: #686868;
 }
@@ -78,7 +78,7 @@ a:hover {
 }
 
 .date-link {
-    background: #f7f7f3;
+    background: #f3f3ea;
     line-height: 40px;
     display: block; 
     padding-left: 10px;
@@ -109,27 +109,11 @@ a:hover {
 }
 
 .messages-even .message {
-    background: #f9f9f5;
+    background: #f3f3ea;
 }
 
 .messages-odd .message {
     background: #e8e8ef;
-}
-
-.messages-collapsed .message {
-    background: #ecf4f8;
-    color: transparent;
-}
-
-.spoiler-wrapper {
-    position: relative;
-    vertical-align: top;
-    width: 1px;
-    height: 1px;
-}
-
-.spoiler {
-    color: #5093fe;
 }
 
 .message-meta {
@@ -140,11 +124,6 @@ a:hover {
 .message-body {
     width: 100%;
     padding: 5px 10px 5px 5px;
-}
-
-.message-status {
-    color: #8f8f8f;
-    background: #ecf4f8;    
 }
 
 .message-from {

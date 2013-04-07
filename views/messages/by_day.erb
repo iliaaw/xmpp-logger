@@ -1,64 +1,30 @@
 <table class="messages">
   <% @even = true %>
   <% @from = nil %>
-  <% @counter = 0 %>
   <% @messages.each_with_index do |m, i| %>
-    <% if m.from %>
-      <% if m.is_status? %>
-        <%# if previous message is not a status %>
-        <% if @counter == 0 %>
-          <% if !@from.nil? %>
-            </tbody>
-          <% end %>
-          <tbody class="messages-group messages-collapsed">
-        <% end %>
-
-        <% @counter += 1 %>
-
-        <tr class="message message-status">
-          <td class="message-meta">
-            <span class="message-time"><a class="message-time-link" href="#<%= i %>"><%= m.created_at.strftime('%H:%M:%S') %></a></span>
-          </td>
-          <td class="message-body"><%= m.from %> is now <%= m.body %></td>
-        </tr>
-      <% else %>
-        <%# if previous message is a status %>
-        <% if @counter != 0 %>
-          <% @even = !@even if !@from.nil? && m.from != @from %>
-          </tbody>
-          <tbody style="display:none;" data-count="<%= @counter %>"></tbody>
-          <% @counter = 0 %>
-          <tbody class="messages-group messages-<%= @even ? 'even' : 'odd' %>">
-        <% else %>
-        <%# previous message is NOT a status %>
-
-          <%# if current message is the first one %>
-          <% if @from.nil? %>
-            <tbody class="messages-group messages-<%= @even ? 'even' : 'odd' %>">
-          <%# if previous message does not belong to the same user as current does %>
-          <% elsif m.from != @from %>
-            <% @even = !@even %>
-            </tbody>
-            <tbody class="messages-group messages-<%= @even ? 'even' : 'odd' %>">
-          <% end %>
-        <% end %>
-
-        <tr class="message">
-          <td class="message-meta">
-            <span class="message-from"><a name="<%= i %>"></a><%= m.from %></span>
-            <span class="message-time"><a class="message-time-link" href="#<%= i %>"><%= m.created_at.strftime('%H:%M:%S') %></a></span>
-          </td>
-          <td class="message-body">
-            <div><%= m.message_type == 'text' ? escape_text_message(m.body) : m.body %></div>
-          </td>
-        </tr>
-
-        <% @from = m.from %>
+    <% if m.from && !m.is_status? %>
+      <%# if current message is the first one %>
+      <% if @from.nil? %>
+        <tbody class="messages-group messages-<%= @even ? 'even' : 'odd' %>">
+      <%# if previous message does not belong to the same user as current does %>
+      <% elsif m.from != @from %>
+        <% @even = !@even %>
+        </tbody>
+        <tbody class="messages-group messages-<%= @even ? 'even' : 'odd' %>">
       <% end %>
+
+      <tr class="message">
+        <td class="message-meta">
+          <span class="message-from"><a name="<%= i %>"></a><%= m.from %></span>
+          <span class="message-time"><a class="message-time-link" href="#<%= i %>"><%= m.created_at.strftime('%H:%M:%S') %></a></span>
+        </td>
+        <td class="message-body">
+          <div><%= m.message_type == 'text' ? escape_text_message(m.body) : m.body %></div>
+        </td>
+      </tr>
+
+      <% @from = m.from %>
     <% end %>
   <% end %>
   </tbody>
-  <% if @counter != 0 %>
-    <tbody style="display:none;" data-count="<%= @counter %>"></tbody>
-  <% end %>
 </table>
