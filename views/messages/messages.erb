@@ -2,7 +2,7 @@
   <% @even = true %>
   <% @from = nil %>
   <% @messages.each_with_index do |m, i| %>
-    <% if m.from && !m.is_status? %>
+    <% if m.from %>
       <%# if current message is the first one %>
       <% if @from.nil? %>
         <tbody class="messages-group messages-<%= @even ? 'even' : 'odd' %>">
