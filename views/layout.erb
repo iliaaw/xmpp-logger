@@ -11,9 +11,10 @@
 
   <body>
     <div class="container">
-      <%= erb :'partials/header' %>
-
-      <%= erb :'partials/nav' %>
+      <% if @render_partials %>
+        <%= erb :'partials/header' %>
+        <%= erb :'partials/nav' %>
+      <% end %>
 
       <%= yield %>
     </div>

@@ -16,7 +16,8 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :'messages/years', :layout => :messages
+    @render_partials = true
+    erb :'messages/years'
   end
 
   get %r{^/([\d]+)/?$}, :auth => :user do |year|
@@ -30,7 +31,8 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :'messages/months', :layout => :messages
+    @render_partials = true
+    erb :'messages/months'
   end
 
   get %r{^/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month|
@@ -45,7 +47,8 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
 
-    erb :'messages/days', :layout => :messages
+    @render_partials = true
+    erb :'messages/days'
   end
 
   get %r{^/([\d]+)/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month, day| 
@@ -60,6 +63,7 @@ class App < Sinatra::Base
       raise ActiveRecord::RecordNotFound
     end
     
-    erb :'messages/messages', :layout => :messages
+    @render_partials = true
+    erb :'messages/messages'
   end
 end
