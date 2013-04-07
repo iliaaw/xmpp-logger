@@ -158,8 +158,6 @@ input[type=text],
 input[type=password] {
     outline: none;
     border: 1px solid #ccc;
-    font-size: 14px;
-    font-family: $body-font-family;
     height: 20px;
     margin: 0px;
     padding: 5px 10px;
