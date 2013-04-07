@@ -79,7 +79,7 @@ ul.messages li a {
 }
 
 ul.messages li a:hover {
-    background: #dddec8;
+    background: #e8e8ef;
 }
 
 ul.messages li {
@@ -93,6 +93,14 @@ ul.messages li:last-child {
 table.messages {
     width: 100%;
     line-height: 1.2;
+}
+
+.messages tbody {
+    border-top: 1px solid #ccc;
+}
+
+.messages tbody:first-child {
+    border-top: none;
 }
 
 .messages-even .message {
