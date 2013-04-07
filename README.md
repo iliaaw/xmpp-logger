@@ -13,7 +13,6 @@ Todo:
 * Add calendar
 * Strip repeating line breaks
 * Implement error pages
-* Maybe move to Backbone.js instead of erb hell
 * Add license
 * Solve the problem with timezone
 * Move to LESS or SASS
