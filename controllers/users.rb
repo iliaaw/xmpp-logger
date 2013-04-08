@@ -10,8 +10,10 @@ class App < Sinatra::Base
   end
 
   before do
-    if session[:user_id]
+    begin
       @user = User.find(session[:user_id])
+    rescue
+      @user = nil
     end
   end
 

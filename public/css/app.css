@@ -143,20 +143,29 @@ a:hover {
 
 /* ======================================== */
 
+.flash {
+    width: 250px;
+    margin: 50px auto 10px;
+    background: #fcdfed;
+    line-height: 40px;
+    padding: 0px 20px;
+}
+
+.login-form {
+    width: 250px;
+    padding: 10px 20px;
+    background: #f3f3ea;
+    margin: 0px auto;
+}
+
 input[type=text],
 input[type=password] {
     outline: none;
     border: 1px solid #ccc;
     height: 20px;
+    width: 228px;
     margin: 0px;
     padding: 5px 10px;
-}
-
-.flash {
-    background: #fbcfe4;
-    line-height: 40px;
-    padding: 0px 10px;
-    margin-bottom: 20px;
 }
 
 .field-login,
