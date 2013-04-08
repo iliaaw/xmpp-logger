@@ -5,7 +5,8 @@ require 'sinatra/base'
 
 class App < Sinatra::Base
   set :raise_errors, false
-  set :show_exceptions, false
+  set :show_exceptions, true if development?
+  set :haml, { :ugly => true } if production?
 
   register Sinatra::ActiveRecordExtension
 

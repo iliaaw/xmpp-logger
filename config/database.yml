@@ -1,8 +1,18 @@
 development:
   adapter: postgresql
-  database: j_dev
-  username: sinatra
-  password: sinatra
+  database: DATABASE
+  username: USER
+  password: PASSWORD
+  host: localhost
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: DATABASE
+  username: USERNAME
+  password: PASSWORD
   host: localhost
   encoding: utf8
   pool: 5
