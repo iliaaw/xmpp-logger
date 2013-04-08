@@ -108,11 +108,11 @@ a:hover {
     border-top: none;
 }
 
-.messages-even .message {
+.messages-group:nth-child(odd) .message {
     background: #f3f3ea;
 }
 
-.messages-odd .message {
+.messages-group:nth-child(even) .message {
     background: #e8e8ef;
 }
 

@@ -27,6 +27,8 @@ GEM
     girl_friday (0.11.2)
       connection_pool (~> 1.0)
       rubinius-actor
+    haml (4.0.2)
+      tilt
     i18n (0.6.1)
     multi_json (1.7.2)
     niceogiri (1.1.1)
@@ -60,6 +62,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   blather
+  haml
   pg
   rake
   sinatra

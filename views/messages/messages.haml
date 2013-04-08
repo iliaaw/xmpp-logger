@@ -1,0 +1,13 @@
+%table.messages
+  - i = 0
+  - group_messages(@messages).each do |g|
+    %tbody.messages-group
+      - g.each do |m|
+        - if m.from
+          %tr.message
+            %td.message-meta
+              %span.message-from{ :id => "#{i}"} #{m.from}
+              %span.message-time
+                %a.message-time-link{ :href => "##{i}" } #{m.created_at.strftime '%H:%M:%S'}
+            %td.message-body
+              %div #{m.message_type == 'text' ? escape_text_message(m.body) : m.body}

@@ -1,0 +1,10 @@
+.flash
+  = @flash
+
+%form.login-form{ :action => '/login', :method => 'post' }
+  .field.field-login
+    %input{ :type => 'text', :name => 'login', :placeholder => 'Login', :autocomplete => 'off' }
+  .field.field-password
+    %input{ :type => 'password', :name => 'password', :placeholder => 'Password' }
+  .field
+    %input{ :type => 'submit', :value => 'Log in' }

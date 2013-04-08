@@ -15,5 +15,19 @@ class App < Sinatra::Base
       # lz means 'leading zero'
       "%02d" % number.to_i
     end
+
+    def group_messages(messages)
+      groups = [] << []
+      from = nil
+      messages.each do |m|
+        if from.nil? || m.from == from
+          groups.last << m
+        else
+          groups << ([] << m)
+        end
+        from = m.from
+      end
+      groups
+    end
   end
 end

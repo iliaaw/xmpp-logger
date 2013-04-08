@@ -1,0 +1,4 @@
+%ul.dates
+  - @messages.each do |m|
+    %li.date
+      %a.date-link{ :href => "/#{@year}/#{lz @month}/#{lz m.day}" } #{lz m.day}

@@ -13,7 +13,7 @@ class App < Sinatra::Base
 
     @messages = Message.all(:select => sql_select, :order => sql_order)
 
-    erb :'messages/years'
+    haml :'messages/years'
   end
 
   get %r{^/([\d]+)/?$}, :auth => :user do |year|
@@ -27,7 +27,7 @@ class App < Sinatra::Base
       error 404
     end
 
-    erb :'messages/months'
+    haml :'messages/months'
   end
 
   get %r{^/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month|
@@ -42,7 +42,7 @@ class App < Sinatra::Base
       error 404
     end
 
-    erb :'messages/days'
+    haml :'messages/days'
   end
 
   get %r{^/([\d]+)/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month, day| 
@@ -57,6 +57,6 @@ class App < Sinatra::Base
       error 404
     end
     
-    erb :'messages/messages'
+    haml :'messages/messages'
   end
 end

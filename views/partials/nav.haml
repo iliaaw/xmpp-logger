@@ -1,0 +1,12 @@
+%ul.nav
+  %li.nav-item<
+    %a{ :href => '/' } 272pi
+  - unless @year.nil?
+    %li.nav-item<
+      %a{ :href => "/#{@year}" } #{@year}
+  - unless @month.nil?
+    %li.nav-item<
+      %a{ :href => "/#{@year}/#{@month}" } #{@month}
+  - unless @day.nil?
+    %li.nav-item<
+      %a{ :href => "/#{@year}/#{@month}/#{@day}" } #{@day}
