@@ -6,7 +6,7 @@
         - if m.from
           %tr.message
             %td.message-meta
-              %span.message-from{ :id => "#{i}"} #{m.from}
+              %span.message-from{ :id => "#{i += 1}"} #{m.from}
               %span.message-time
                 %a.message-time-link{ :href => "##{i}" } #{m.created_at.strftime '%H:%M:%S'}
             %td.message-body #{m.message_type == 'text' ? escape_text_message(m.body) : m.body}
