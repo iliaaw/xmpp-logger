@@ -7,6 +7,7 @@ class App < Sinatra::Base
   set :raise_errors, false
   set :show_exceptions, true if development?
   set :haml, { :ugly => true } if production?
+  set :views, File.join(settings.root, 'app', 'views')
 
   register Sinatra::ActiveRecordExtension
 
@@ -40,10 +41,10 @@ class App < Sinatra::Base
   end
 end
 
-require './models/user'
-require './models/message'
-require './controllers/users'
-require './controllers/messages'
-require './controllers/errors'
-require './helpers/users'
-require './helpers/messages'
+require './app/models/user'
+require './app/models/message'
+require './app/controllers/users'
+require './app/controllers/messages'
+require './app/controllers/errors'
+require './app/helpers/users'
+require './app/helpers/messages'
