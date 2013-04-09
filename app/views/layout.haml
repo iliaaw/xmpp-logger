@@ -11,8 +11,8 @@
   %body
     - unless (no_container ||= false)
       %div.container
-        - unless (no_header ||= false)
-          = haml :'partials/header'
+        = haml :'partials/header'
+        - unless (no_nav ||= false)
           = haml :'partials/nav'
         = yield
     - else

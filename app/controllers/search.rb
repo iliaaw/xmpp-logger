@@ -4,6 +4,6 @@ class App < Sinatra::Base
       query = params['query']
       @messages = Message.search query, :page => b
     end
-    haml :'search/search'
+    haml :'search/search', :locals => { :no_nav => true }
   end
 end
