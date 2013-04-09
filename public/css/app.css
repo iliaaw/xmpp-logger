@@ -170,8 +170,8 @@ a:hover {
     margin: 0px auto;
 }
 
-input[type=text],
-input[type=password] {
+.login-form input[type=text],
+.login-form input[type=password] {
     outline: none;
     border: 1px solid #ccc;
     height: 20px;
@@ -210,9 +210,40 @@ input[type=password] {
 /* ======================================== */
 
 .search-form {
+    height: 26px;
+    padding: 7px 10px;
+    background: #f3f3ea;
     margin-bottom: 20px;
 }
 
+.search-form input[type=text] {
+    outline: none;
+    border: 1px solid #ccc;
+    height: 14px;
+    width: 200px;
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+/* ======================================== */
+
 .pagination {
     margin-top: 20px;
+}
+
+.pagination span,
+.pagination em,
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #f3f3ea;
+    margin-right: 3px;
+}
+
+.pagination a:hover {
+    background: #e8e8ef;
+}
+
+.pagination span.gap {
+    background: none;
 }

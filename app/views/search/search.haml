@@ -1,7 +1,6 @@
-%div.search-form
-  %form{ :action => '/search', :method => 'get' }
-    %input{ :type => 'text', :name => 'query', :autocomplete => 'off',  :autofocus => 'autofocus', :value => params[:query] }
-    %input{ :type => 'submit', :value => 'Search' }
+%form.search-form{ :action => '/search', :method => 'get' }
+  %input{ :type => 'text', :name => 'query', :autocomplete => 'off',  :autofocus => 'autofocus', :value => params[:query] }
+  %input{ :type => 'submit', :value => 'search' }
 
 - if @messages
   %table.results
