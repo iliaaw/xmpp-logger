@@ -12,3 +12,5 @@
           %span.result-time
             %a.result-time-link{ :href => "/#{m.created_at.year}/#{lz m.created_at.month}/#{lz m.created_at.day}##{m.id}" } #{m.created_at.strftime '%H:%M:%S'}
           %td.result-body #{m.message_type == 'text' ? escape_text_message(m.body) : m.body}
+
+  = will_paginate @messages

@@ -2,6 +2,20 @@ require 'blather/client/client'
 require 'blather/stanza/presence/muc'
 require 'sinatra/activerecord'
 require 'sinatra/base'
+require 'will_paginate'
+require 'will_paginate/active_record'
+
+module WillPaginate
+  module Sinatra
+    class LinkRenderer < ViewHelpers::LinkRenderer
+      protected
+
+      def url(page)
+        "/search/page#{page.to_s}" << '?' << build_query(request.GET)
+      end
+    end
+  end
+end
 
 class App < Sinatra::Base
   set :raise_errors, false
@@ -10,6 +24,7 @@ class App < Sinatra::Base
   set :views, File.join(settings.root, 'app', 'views')
 
   register Sinatra::ActiveRecordExtension
+  register WillPaginate::Sinatra
 
   configure do
     Thread.start do
