@@ -196,3 +196,45 @@ input[type=password] {
         width: 100%;
     }
 }
+
+/* ======================================== */
+
+.search-form {
+    margin-bottom: 10px;
+}
+
+.results {
+    border-spacing: 0px 10px;
+    border-collapse: separate;
+}
+
+.result {
+    background: #f3f3ea;
+}
+
+.result-meta {
+    white-space: nowrap;
+    padding: 5px 5px 5px 10px;
+}
+
+.result-body {
+    width: 100%;
+    padding: 5px 10px 5px 5px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.result-from {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+}  
+
+.result-time {
+    text-align: right;
+    display: block;
+}
+
+.result-time-link {
+    color: #5093fe;
+}

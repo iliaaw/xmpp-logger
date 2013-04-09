@@ -1,0 +1,14 @@
+%div.search-form
+  %form{ :action => '/search', :method => 'get' }
+    %input{ :type => 'text', :name => 'query', :autocomplete => 'off',  :autofocus => 'autofocus', :value => params[:query] }
+    %input{ :type => 'submit', :value => 'Search' }
+
+- if @messages
+  %table.results
+    - @messages.each do |m|
+      %tr.result
+        %td.result-meta
+          %span.result-from #{m.from}
+          %span.result-time
+            %a.result-time-link{ :href => "/#{m.created_at.year}/#{lz m.created_at.month}/#{lz m.created_at.day}##{m.id}" } #{m.created_at.strftime '%H:%M:%S'}
+          %td.result-body #{m.message_type == 'text' ? escape_text_message(m.body) : m.body}
