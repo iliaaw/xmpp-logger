@@ -4,18 +4,9 @@ require 'sinatra/activerecord'
 require 'sinatra/base'
 require 'will_paginate'
 require 'will_paginate/active_record'
-
-module WillPaginate
-  module Sinatra
-    class LinkRenderer < ViewHelpers::LinkRenderer
-      protected
-
-      def url(page)
-        "/search/page#{page.to_s}" << '?' << build_query(request.GET)
-      end
-    end
-  end
-end
+require './app/models/user'
+require './app/models/message'
+require './config/initializers/will_paginate'
 
 class App < Sinatra::Base
   set :raise_errors, false
@@ -56,8 +47,6 @@ class App < Sinatra::Base
   end
 end
 
-require './app/models/user'
-require './app/models/message'
 require './app/controllers/users'
 require './app/controllers/messages'
 require './app/controllers/search'
