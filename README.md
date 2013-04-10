@@ -9,7 +9,6 @@ Todo:
 ----
 * Change title
 * Leverage caching
-* Add Sphinx search
 * Add calendar
 * Strip repeating line breaks
 * Add license
