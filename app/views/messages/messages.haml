@@ -3,9 +3,9 @@
     %tbody.messages-group
       - g.each do |m|
         - if m.from
-          %tr.message
+          %tr.message{ :id => "#{m.anchor}" }
             %td.message-meta
-              %span.message-from{ :id => "#{m.anchor}"} #{m.from}
+              %span.message-from #{m.from}
               %span.message-time
                 %a.message-time-link{ :href => "##{m.anchor}" } #{m.created_at.strftime '%H:%M:%S'}
             %td.message-body #{m.message_type == 'text' ? escape_text_message(m.body) : m.body}
