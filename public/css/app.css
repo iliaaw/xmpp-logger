@@ -140,13 +140,13 @@ a:hover {
 .message-meta,
 .result-meta {
     white-space: nowrap;
-    padding: 5px 5px 5px 10px;
+    padding: 3px 5px 4px 10px;
 }
 
 .message-body,
 .result-body {
     width: 100%;
-    padding: 5px 10px 5px 5px;
+    padding: 3px 10px 4px 5px;
     word-wrap: break-word;
     word-break: break-word;
 }
