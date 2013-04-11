@@ -11,6 +11,10 @@ input[type=password] {
     color: #080808;
 }
 
+body {
+    background: url(/images/bg.png);
+}
+
 a {
     color: #1e74fd;
 }
@@ -21,10 +25,14 @@ a:hover {
 
 .container {
     width: 960px;
+    padding: 0px 10px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    margin: 0px auto -60px;
+
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0px auto -60px;
 }
 
 /* ======================================== */
@@ -245,6 +253,7 @@ a:hover {
     padding: 5px 10px;
     background: #f3f3ea;
     margin-right: 3px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
 .pagination a:hover {
@@ -253,6 +262,7 @@ a:hover {
 
 .pagination span.gap {
     background: none;
+    box-shadow: none;
 }
 
 /* ======================================== */
@@ -272,4 +282,17 @@ a:hover {
 
 .footer-author {
     float: right;
+}
+
+/* ======================================== */
+
+.header,
+.nav,
+.dates,
+.messages,
+.results,
+.footer,
+.search-form,
+.login-form {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
