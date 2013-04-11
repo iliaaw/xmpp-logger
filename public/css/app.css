@@ -8,7 +8,7 @@ input[type=text],
 input[type=password] {
     font-family: "pt sans", sans-serif;
     font-size: 16px;
-    color: #080808;
+    color: #101010;
 }
 
 body {
@@ -39,7 +39,7 @@ a:hover {
 
 .header {
     height: 40px;
-    background: #f3f3ea;
+    background: #fefefe;
     margin-bottom: 20px;
 }
 
@@ -66,7 +66,7 @@ a:hover {
 
 .nav {
     height: 40px;
-    background: #f3f3ea;
+    background: #fefefe;
     margin-bottom: 20px;
     color: #686868;
 }
@@ -94,7 +94,7 @@ a:hover {
 }
 
 .date-link {
-    background: #f3f3ea;
+    background: #fefefe;
     line-height: 40px;
     display: block; 
     padding-left: 10px;
@@ -106,7 +106,7 @@ a:hover {
 }
 
 .date-link:hover {
-    background: #e8e8ef;
+    background: #efeff2;
 }
 
 /* ======================================== */
@@ -129,12 +129,12 @@ a:hover {
 
 .messages-group:nth-child(odd) .message,
 .result:nth-child(odd) {
-    background: #f3f3ea;
+    background: #fefefe;
 }
 
 .messages-group:nth-child(even) .message,
 .result:nth-child(even) {
-    background: #e8e8ef;
+    background: #efeff2;
 }
 
 .message-meta,
@@ -182,7 +182,7 @@ a:hover {
 .login-form {
     width: 250px;
     padding: 10px 20px;
-    background: #f3f3ea;
+    background: #fefefe;
     margin: 0px auto;
 }
 
@@ -208,7 +208,7 @@ a:hover {
     text-align: center;
     padding: 10px 0px;
     font-size: 24px;
-    background: #f3f3ea;
+    background: #fefefe;
 }
 
 .error {
@@ -227,7 +227,7 @@ a:hover {
 .search-form {
     height: 26px;
     padding: 7px 10px;
-    background: #f3f3ea;
+    background: #fefefe;
     margin-bottom: 20px;
 }
 
@@ -251,13 +251,13 @@ a:hover {
 .pagination a {
     display: inline-block;
     padding: 5px 10px;
-    background: #f3f3ea;
+    background: #fefefe;
     margin-right: 3px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
 .pagination a:hover {
-    background: #e8e8ef;
+    background: #efeff2;
 }
 
 .pagination span.gap {
@@ -277,7 +277,7 @@ a:hover {
     padding: 0px 10px;
     line-height: 40px;
     margin: 20px auto 0px;
-    background: #f3f3ea;
+    background: #fefefe;
 }
 
 .footer-author {
