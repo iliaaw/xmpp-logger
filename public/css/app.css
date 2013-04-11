@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+}
+
 body,
 input[type=text],
 input[type=password] {
@@ -16,7 +21,10 @@ a:hover {
 
 .container {
     width: 960px;
-    margin: 0px auto 40px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0px auto -60px;
 }
 
 /* ======================================== */
@@ -186,10 +194,9 @@ a:hover {
 }
 
 /* ======================================== */
-
 .error-wrapper {
     width: 960px;
-    margin: 50px auto 0px;
+    margin: 0px auto;
     text-align: center;
     padding: 10px 0px;
     font-size: 24px;
@@ -246,4 +253,23 @@ a:hover {
 
 .pagination span.gap {
     background: none;
+}
+
+/* ======================================== */
+
+.push {
+    height: 60px;
+}
+
+.footer {
+    height: 40px;
+    width: 940px;
+    padding: 0px 10px;
+    line-height: 40px;
+    margin: 20px auto 0px;
+    background: #f3f3ea;
+}
+
+.footer-author {
+    float: right;
 }

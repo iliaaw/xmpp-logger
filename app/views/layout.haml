@@ -15,5 +15,10 @@
         - unless (no_nav ||= false)
           = haml :'partials/nav'
         = yield
+        %div.push
+      %div.footer
+        %span.footer-author
+          ©2013
+          %a{ :href => 'http://awolf.ru' } awolf
     - else
       = yield
