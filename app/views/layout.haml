@@ -10,15 +10,17 @@
     %script{ :src => '/js/app.js', :type => 'text/javascript' }
   %body
     - unless (no_container ||= false)
-      %div.container
-        = haml :'partials/header'
-        - unless (no_nav ||= false)
-          = haml :'partials/nav'
-        = yield
+      %div.container-wrapper
+        %div.container
+          = haml :'partials/header'
+          - unless (no_nav ||= false)
+            = haml :'partials/nav'
+          = yield
         %div.push
-      %div.footer
-        %span.footer-author
-          ©2013
-          %a{ :href => 'http://awolf.ru' } awolf
+      %div.footer-wrapper
+        %div.footer
+          %span.footer-author
+            ©2013
+            %a{ :href => 'http://awolf.ru' } awolf
     - else
       = yield

@@ -23,16 +23,30 @@ a:hover {
     color: #ff035b !important;
 }
 
-.container {
-    width: 960px;
-    padding: 0px 10px;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+.container-wrapper {
+    width: 980px;
+    background: rgba(255, 255, 255, 0.3);
     margin: 0px auto -60px;
 
     min-height: 100%;
     height: auto !important;
     height: 100%;
+}
+
+.container {
+    margin: 0px 10px;
+}
+
+@media (max-width: 960px) {
+    .container-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .container-wrapper {
+        width: 650px;
+    }
 }
 
 /* ======================================== */
@@ -271,12 +285,17 @@ a:hover {
     height: 60px;
 }
 
-.footer {
+.footer-wrapper {
+    width: 980px;
     height: 40px;
-    width: 940px;
-    padding: 0px 10px;
     line-height: 40px;
     margin: 20px auto 0px;
+}
+
+.footer {
+    height: 40px;
+    margin: 0px 10px;
+    padding: 0px 10px;
     background: #fefefe;
 }
 
@@ -284,8 +303,21 @@ a:hover {
     float: right;
 }
 
+@media (max-width: 960px) {
+    .footer-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .footer-wrapper {
+        width: 650px;
+    }
+}
+
 /* ======================================== */
 
+.container-wrapper,
 .header,
 .nav,
 .dates,
