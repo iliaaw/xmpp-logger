@@ -13,6 +13,9 @@ input[type=password] {
 
 body {
     background: url(/images/bg.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: repeat;
 }
 
 a {
