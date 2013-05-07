@@ -6,7 +6,7 @@ XMPP settings (bot's JID, password and nickname and room's name) are specified i
 
 Sphinx search
 -------------
-`xmpp-logger` uses [Sphinx](http://sphinxsearch.com) search engine and [Thinking Sphinx](http://pat.github.io/thinking-sphinx) gem to provide message search.
+`xmpp-logger` uses [Sphinx](http://sphinxsearch.com) search engine and [Thinking Sphinx](http://pat.github.io/thinking-sphinx) gem to provide message search. Ruby [Whenever](https://github.com/javan/whenever) gem is used to generate cron tasks for periodic indexing. To update crontab file, run `whenever -i`.
 
 Users management
 ----------------
