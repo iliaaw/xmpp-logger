@@ -31,5 +31,4 @@ Todo:
 * Add license
 * Solve the problem with timezone
 * Move to LESS or SASS
-* Add periodic indexing
 * Detach XMPP settings into a separate config file 
