@@ -1,7 +1,7 @@
 class App < Sinatra::Base
-  @@sql_where_years = 'extract(year from created_at at time zone \'UTC -4\') = ?'
-  @@sql_where_months = ' and extract(month from created_at at time zone \'UTC -4\') = ?'
-  @@sql_where_days = ' and extract(day from created_at at time zone \'UTC -4\') = ?'
+  SQL_WHERE_YEARS = 'extract(year from created_at at time zone \'UTC -4\') = ?'
+  SQL_WHERE_MONTHS = ' and extract(month from created_at at time zone \'UTC -4\') = ?'
+  SQL_WHERE_DAYS = ' and extract(day from created_at at time zone \'UTC -4\') = ?'
 
   def sql_extract(field)
     "distinct extract(#{field} from created_at at time zone \'UTC -4\') as #{field}"
@@ -18,7 +18,7 @@ class App < Sinatra::Base
 
   # GET /2013
   get %r{^/([\d]+)/?$}, :auth => :user do |year|
-    sql_where = @@sql_where_years
+    sql_where = SQL_WHERE_YEARS
     sql_select = sql_extract('month')
     sql_order = 'month desc'
 
@@ -33,7 +33,7 @@ class App < Sinatra::Base
 
   # GET /2013/05
   get %r{^/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month|
-    sql_where = @@sql_where_years + @@sql_where_months
+    sql_where = SQL_WHERE_YEARS + SQL_WHERE_MONTHS
     sql_select = sql_extract('day')
     sql_order = 'day desc'
 
@@ -49,7 +49,7 @@ class App < Sinatra::Base
 
   # GET /2013/05/09
   get %r{^/([\d]+)/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month, day| 
-    sql_where = @@sql_where_years + @@sql_where_months + @@sql_where_days
+    sql_where = SQL_WHERE_YEARS + SQL_WHERE_MONTHS + SQL_WHERE_DAYS
     sql_order = 'created_at asc'
 
     @year = year
