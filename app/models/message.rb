@@ -1,6 +1,3 @@
-require 'thinking_sphinx'
-require 'digest'
-
 class Message < ActiveRecord::Base
   include ThinkingSphinx::ActiveRecord::Base
   

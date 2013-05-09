@@ -1,5 +1,3 @@
-require 'digest'
-
 class App < Sinatra::Base
   register do
     def auth(type)

@@ -1,0 +1,11 @@
+development:
+  jid: JID
+  password: PASSWORD
+  room: ROOM
+  nickname: NICKNAME
+
+production:
+  jid: JID
+  password: PASSWORD
+  room: ROOM
+  nickname: NICKNAME
