@@ -16,6 +16,7 @@ class App < Sinatra::Base
     haml :'messages/years'
   end
 
+  # GET /2013
   get %r{^/([\d]+)/?$}, :auth => :user do |year|
     sql_where = @@sql_where_years
     sql_select = sql_extract('month')
@@ -30,6 +31,7 @@ class App < Sinatra::Base
     haml :'messages/months'
   end
 
+  # GET /2013/05
   get %r{^/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month|
     sql_where = @@sql_where_years + @@sql_where_months
     sql_select = sql_extract('day')
@@ -45,6 +47,7 @@ class App < Sinatra::Base
     haml :'messages/days'
   end
 
+  # GET /2013/05/09
   get %r{^/([\d]+)/([\d]+)/([\d]+)/?$}, :auth => :user do |year, month, day| 
     sql_where = @@sql_where_years + @@sql_where_months + @@sql_where_days
     sql_order = 'created_at asc'
