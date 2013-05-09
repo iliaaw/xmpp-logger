@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   database: DATABASE
-  username: USER
+  username: USERNAME
   password: PASSWORD
   host: localhost
   encoding: utf8
