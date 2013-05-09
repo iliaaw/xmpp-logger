@@ -20,7 +20,7 @@ At least one user must be created to make possible accessing web-interface.
 
 Usage
 -----
-The easiest way to get `xmpp-logger` up and running is to use `thin -R config.ru start`.
+The easiest way to get web-interface up and running is to use `thin -R config.ru start`. XMPP logger should be started separately using `bundle exec ruby logger.rb`
 
 Todo:
 -----
@@ -30,4 +30,3 @@ Todo:
 * Strip repeating line breaks
 * Solve the problem with timezone
 * Move to LESS or SASS
-* Detach XMPP settings into a separate config file 
