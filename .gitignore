@@ -4,3 +4,4 @@ db/sphinx/
 log/*
 !log/.gitkeep
 tmp/
+.idea
