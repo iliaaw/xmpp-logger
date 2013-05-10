@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/activerecord'
 require 'yaml'
 require 'active_record'
 require 'will_paginate'
@@ -28,4 +29,5 @@ class App < Sinatra::Base
   ActiveRecord::Base.establish_connection(db_config)
 
   register WillPaginate::Sinatra
+  register Sinatra::ActiveRecordExtension
 end
