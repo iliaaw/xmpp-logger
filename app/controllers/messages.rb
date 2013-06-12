@@ -1,10 +1,10 @@
 class App < Sinatra::Base
-  SQL_WHERE_YEARS = 'extract(year from created_at at time zone \'UTC -4\') = ?'
-  SQL_WHERE_MONTHS = ' and extract(month from created_at at time zone \'UTC -4\') = ?'
-  SQL_WHERE_DAYS = ' and extract(day from created_at at time zone \'UTC -4\') = ?'
+  SQL_WHERE_YEARS = 'extract(year from created_at at time zone \'UTC\') = ?'
+  SQL_WHERE_MONTHS = ' and extract(month from created_at at time zone \'UTC\') = ?'
+  SQL_WHERE_DAYS = ' and extract(day from created_at at time zone \'UTC\') = ?'
 
   def sql_extract(field)
-    "distinct extract(#{field} from created_at at time zone \'UTC -4\') as #{field}"
+    "distinct extract(#{field} from created_at at time zone \'UTC\') as #{field}"
   end
 
   get '/', :auth => :user do

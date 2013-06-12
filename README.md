@@ -22,11 +22,3 @@ Usage
 -----
 The easiest way to get web-interface up and running is to use `thin -R config.ru start`. XMPP logger should be started separately using `bundle exec ruby logger.rb`
 
-Todo:
------
-* Change title
-* Leverage caching
-* Add calendar
-* Strip repeating line breaks
-* Solve the problem with timezone
-* Move to LESS or SASS
