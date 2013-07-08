@@ -2,7 +2,7 @@ This is an XMPP Multi-User Chat logger with web-interface written in Ruby. It is
 
 Configutation
 -------------
-XMPP settings (bot's JID, password and nickname and room's name) are specified in `app.rb`. Database to use is specified in `config/database.yml`.
+XMPP settings (bot's JID, password and nickname and room's name) are specified in `config/xmpp.yml`. Database to use is specified in `config/database.yml`.
 
 Sphinx search
 -------------
