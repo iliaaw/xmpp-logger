@@ -1,4 +1,4 @@
 %ul.dates
   - @messages.each do |m|
     %li.date
-      %a.date-link{ :href => "/#{@year}/#{lz m.month}" } #{lz m.month}
+      %a.date-link{ :href => "/#{@year}/#{add_leading_zero m.month}" } #{add_leading_zero m.month}

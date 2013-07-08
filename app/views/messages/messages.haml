@@ -1,5 +1,5 @@
 %table.messages
-  - group_messages(@messages).each do |g|
+  - group_messages_by_sender(@messages).each do |g|
     %tbody.messages-group
       - g.each do |m|
         - if m.from

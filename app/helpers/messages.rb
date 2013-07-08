@@ -11,12 +11,11 @@ class App < Sinatra::Base
       Message.last.created_at.strftime("/%Y/%m/%d")
     end
 
-    def lz(number)
-      # lz means 'leading zero'
+    def add_leading_zero(number)
       "%02d" % number.to_i
     end
 
-    def group_messages(messages)
+    def group_messages_by_sender(messages)
       groups = [] << []
       from = nil
       messages.each do |m|
