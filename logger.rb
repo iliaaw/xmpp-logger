@@ -28,13 +28,10 @@ EventMachine.run do
   end
 
   xmpp_client.register_handler :message, :groupchat? do |m|
-    if m.body && !m.body.empty? && !m.delayed? && m.from.resource
-      message = Message.new(
-          :from => m.from.resource,
-          :body => m.xhtml.blank? ? m.body : m.xhtml,
-          :message_type => m.xhtml.blank? ? 'text' : 'xhtml'
-      )
-      message.save
-    end
+    Message.create(
+      :from => m.from.resource,
+      :body => m.xhtml.blank? ? m.body : m.xhtml,
+      :message_type => m.xhtml.blank? ? 'text' : 'xhtml'
+    ) if m.body && !m.body.empty? && !m.delayed? && m.from.resource
   end
 end
