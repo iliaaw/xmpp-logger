@@ -16,7 +16,7 @@ class App < Sinatra::Base
   end
 
   get '/login' do
-    haml :'users/login', :locals => { :no_container => true }
+    haml :'users/login'
   end
 
   post '/login' do
@@ -27,7 +27,7 @@ class App < Sinatra::Base
       redirect to '/'
     else
       @flash = 'Invalid credentials'
-      haml :'users/login', :locals => { :no_container => true }
+      haml :'users/login'
     end
   end
 

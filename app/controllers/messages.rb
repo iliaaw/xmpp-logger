@@ -6,7 +6,7 @@ class App < Sinatra::Base
 
     @messages = Message.all(:select => sql_select, :order => sql_order)
 
-    haml :'messages/years'
+    haml :'messages/years', :layout => :messages_layout
   end
 
   # GET /2013
@@ -21,7 +21,7 @@ class App < Sinatra::Base
       error 404
     end
 
-    haml :'messages/months'
+    haml :'messages/months', :layout => :messages_layout
   end
 
   # GET /2013/05
@@ -37,7 +37,7 @@ class App < Sinatra::Base
       error 404
     end
 
-    haml :'messages/days'
+    haml :'messages/days', :layout => :messages_layout
   end
 
   # GET /2013/05/09
@@ -53,7 +53,7 @@ class App < Sinatra::Base
       error 404
     end
     
-    haml :'messages/messages'
+    haml :'messages/messages', :layout => :messages_layout
   end
 
   @@sql_where_years = 'extract(year from created_at at time zone \'UTC\') = ?'

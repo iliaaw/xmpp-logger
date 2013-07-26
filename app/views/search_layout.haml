@@ -1,0 +1,10 @@
+!!!
+%html
+  = haml :'partials/head'
+  %body
+    %div.container-wrapper
+      %div.container
+        = haml :'partials/header'
+        = yield
+      %div.push
+    = haml :'partials/footer'
