@@ -8,7 +8,7 @@ class App < Sinatra::Base
     end
 
     def last_day_path
-      Message.last.created_at.utc.strftime("/%Y/%m/%d")
+      Message.last.nil? ? nil : Message.last.created_at.utc.strftime("/%Y/%m/%d")
     end
 
     def add_leading_zero(number)
