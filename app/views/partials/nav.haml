@@ -1,6 +1,6 @@
 %ul.nav
   %li.nav-item<
-    %a{ :href => '/' } 272pi
+    %a{ :href => '/' } #{settings.room_name}
   - unless @year.nil?
     %li.nav-item<
       %a{ :href => "/#{@year}" } #{@year}

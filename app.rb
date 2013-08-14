@@ -28,6 +28,9 @@ class App < Sinatra::Base
   db_config = YAML::load_file(File.join(File.dirname(__FILE__), 'config', 'database.yml'))[env]
   ActiveRecord::Base.establish_connection(db_config)
 
+  xmpp_config = YAML::load_file(File.join(File.dirname(__FILE__), 'config', 'xmpp.yml'))[env]
+  set :room_name, xmpp_config['room']
+
   register WillPaginate::Sinatra
   register Sinatra::ActiveRecordExtension
 end
